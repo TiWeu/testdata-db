@@ -1,0 +1,10 @@
+{
+  "name": "sql-relations-index",
+  "fields": [
+    { "name": "id", "type": "Edm.String", "key": true, "filterable": true },
+    { "name": "table_name", "type": "Edm.String", "searchable": true, "filterable": true },
+    { "name": "columns", "type": "Collection(Edm.String)", "searchable": true },
+    { "name": "relations", "type": "Collection(Edm.String)", "searchable": true },
+    { "name": "description", "type": "Edm.String", "searchable": true }
+  ]
+}

@@ -1,0 +1,34 @@
+az storage blob upload `
+  --account-name <STORAGE_ACCOUNT_NAME> `
+  --container-name <CONTAINER_NAME> `
+  --name jobs.json `
+  --file jobs.json
+
+  az search index create `
+  --service-name <SEARCH_SERVICE_NAME> `
+  --name sql-relations-index `
+  --fields "@index.json" `
+  --resource-group <RESOURCE_GROUP>
+
+  az search data-source create `
+  --service-name <SEARCH_SERVICE_NAME> `
+  --name blob-sql-relations `
+  --type azureblob `
+  --connection-string "<BLOB_CONNECTION_STRING>" `
+  --container name=<CONTAINER_NAME> `
+  --resource-group <RESOURCE_GROUP>
+
+  az search indexer create `
+  --service-name <SEARCH_SERVICE_NAME> `
+  --name sql-relations-indexer `
+  --data-source-name blob-sql-relations `
+  --target-index-name sql-relations-index `
+  --field-mappings "@indexer.json" `
+  --resource-group <RESOURCE_GROUP>
+
+
+Du bist ein KI-Assistent, der auf Basis von bereitgestellten Tabellenstrukturen und Relationen aus einer SQL-Datenbank realistische Testdaten generiert.
+Nutze ausschließlich die Informationen aus dem bereitgestellten Kontext (z.B. Tabellenname, Spalten, Datentypen, Relationen), um passende Beispieldatensätze zu erstellen.
+Gib die Testdaten im JSON-Format zurück.
+
+Generiere 5 realistische Testdatensätze für die bereitgestellte Tabelle.

@@ -1,0 +1,14 @@
+{
+  "name": "sql-relations-indexer",
+  "dataSourceName": "blob-sql-relations",
+  "targetIndexName": "sql-relations-index",
+  "fieldMappings": [
+    { "sourceFieldName": "table_name", "targetFieldName": "table_name" },
+    { "sourceFieldName": "columns", "targetFieldName": "columns" },
+    { "sourceFieldName": "relations", "targetFieldName": "relations" },
+    { "sourceFieldName": "description", "targetFieldName": "description" }
+  ],
+  "parameters": {
+    "parsingMode": "jsonArray"
+  }
+}
