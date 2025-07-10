@@ -1,0 +1,25 @@
+{
+  "id": "employees",
+  "title": "employees",
+  "content": "Table employees with columns: employee_id (NUMBER(6), PK, NOT NULL), first_name (VARCHAR2(20)), last_name (VARCHAR2(25), NOT NULL), job_id (VARCHAR2(10), FK, NOT NULL). Constraints: employee_id must be unique and not null. job_id must reference jobs.job_id.",
+  "table_name": "employees",
+  "columns": [
+    { "name": "employee_id", "type": "NUMBER(6)", "primary_key": true, "nullable": false },
+    { "name": "first_name", "type": "VARCHAR2(20)", "primary_key": false, "nullable": true },
+    { "name": "last_name", "type": "VARCHAR2(25)", "primary_key": false, "nullable": false },
+    { "name": "job_id", "type": "VARCHAR2(10)", "primary_key": false, "nullable": false }
+  ],
+  "relations": [
+    {
+      "type": "foreign_key",
+      "column": "job_id",
+      "references_table": "jobs",
+      "references_column": "job_id"
+    }
+  ],
+  "constraints": [
+    { "type": "check", "expression": "employee_id IS NOT NULL" },
+    { "type": "check", "expression": "job_id IS NOT NULL" }
+  ],
+  "description": "Table employees with employee_id (PK), first_name, last_name (NOT NULL), job_id (FK, NOT NULL). job_id references jobs.job_id."
+}
