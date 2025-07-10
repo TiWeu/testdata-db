@@ -1,5 +1,7 @@
 {
   "id": "jobs",
+  "title": "jobs",
+  "content": "Table jobs with columns: job_id (VARCHAR2(10), PK, NOT NULL), job_title (VARCHAR2(35), NOT NULL), min_salary (NUMBER(6)), max_salary (NUMBER(6)).",
   "table_name": "jobs",
   "columns": [
     { "name": "job_id", "type": "VARCHAR2(10)", "primary_key": true, "nullable": false },
@@ -8,5 +10,5 @@
     { "name": "max_salary", "type": "NUMBER(6)", "primary_key": false, "nullable": true }
   ],
   "relations": [],
-  "description": "Tabelle jobs mit den Spalten job_id (PK), job_title (NOT NULL), min_salary, max_salary."
+  "description": "Table jobs with job_id (PK), job_title (NOT NULL), min_salary, max_salary."
 }
