@@ -74,3 +74,11 @@ Use only the structure, columns, data types, constraints, and relations from the
 Output only the JSON arrays for each table, without any explanations, comments, or extra text.
 If multiple tables are present, output a JSON object where each key is the table name and the value is the array of records for that table.
 If the context is missing or incomplete, respond only with: {}
+
+
+
+
+Generate test data for the specified table and all referenced tables required for foreign key constraints.
+Output only the JSON arrays, and order the tables so that referenced tables (e.g., parent tables) come first, followed by dependent tables.
+This ensures that the data can be inserted into a database in a valid order.
+Do not include any explanations or comments, only valid JSON.
